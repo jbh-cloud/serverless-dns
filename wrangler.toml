@@ -1,6 +1,6 @@
 name = "serverless-dns"
 main = "./dist/worker.js"
-workers_dev = true
+# workers_dev = true
 # logpush job is setup to capture from envs ending: log, pro, or one
 logpush = false
 # use node_compat or custom build
@@ -8,6 +8,10 @@ logpush = false
 compatibility_date = "2022-11-30"
 send_metrics = false
 minify = false
+
+routes = [
+	{ pattern = "dns.jbh.cloud", custom_domain = true }
+]
 
 # uncomment to enable analytics on serverless-dns
 # this binding is not inherited by other worker-envs
